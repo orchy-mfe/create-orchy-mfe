@@ -1,0 +1,3 @@
+{
+  "extends": ["github>orchy-mfe/orchy-renovate-config"]
+}
