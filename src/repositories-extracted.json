@@ -1,0 +1,42 @@
+[
+    {
+        "name": "orchy-preact-js-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-template/zipball"
+    },
+    {
+        "name": "orchy-preact-js-typescript-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-typescript-template/zipball"
+    },
+    {
+        "name": "orchy-react-js-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-react-js-template/zipball"
+    },
+    {
+        "name": "orchy-react-js-typescript-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-react-js-typescript-template/zipball"
+    },
+    {
+        "name": "orchy-svelte-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-svelte-template/zipball"
+    },
+    {
+        "name": "orchy-svelte-typescript-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-svelte-typescript-template/zipball"
+    },
+    {
+        "name": "orchy-vanilla-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-template/zipball"
+    },
+    {
+        "name": "orchy-vanilla-typescript-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-typescript-template/zipball"
+    },
+    {
+        "name": "orchy-vue-js-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-template/zipball"
+    },
+    {
+        "name": "orchy-vue-js-typescript-template",
+        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-typescript-template/zipball"
+    }
+]
