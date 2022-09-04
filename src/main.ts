@@ -1,8 +1,10 @@
-import GitClient from "./gitClient"
+import GitFacade from "./gitFacade"
 
 const main = async () => {
-    const gitClient = new GitClient()
+    const gitFacade = new GitFacade()
 
-    const repositories = await gitClient.retrieveRepositories()
+    const groupedRepositories = await gitFacade.retrieveGroupedRepositories()
 
 }
+
+main()

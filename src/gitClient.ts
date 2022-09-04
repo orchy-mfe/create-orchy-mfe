@@ -1,6 +1,6 @@
 import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
 
-interface GitTemplateRepositories {
+export type GitTemplateRepositories = {
     downloadUrl: string
     name: string
 }
