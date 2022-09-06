@@ -25,7 +25,6 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
 
 const downloadTemplate = async(choises: Required<Arguments>, groupedRepositories: GroupedRepositories) => {
     const destinationPath = path.join(choises.directory, choises.name)
-    await fs.mkdir(destinationPath, {recursive: true})
 
     const archiveToDownload = groupedRepositories[choises.template][`${choises.ts}`]
 
