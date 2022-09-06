@@ -36,6 +36,7 @@ const downloadTemplate = async(choises: Required<Arguments>, groupedRepositories
     downloaderHelper.pipe(unzipper.Extract({ path: destinationPath }))
 
     await downloaderHelper.start()
+    await fs.rmdir(tmpFolder)
 }
 
 const main = async () => {
