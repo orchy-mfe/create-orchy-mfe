@@ -11,8 +11,6 @@ type UserRepositoriesResponse = RestEndpointMethodTypes["repos"]["listForUser"][
 
 const isTemplateRepository = (repository: UserRepositoriesResponse) => repository.name.startsWith('orchy') && repository.name.endsWith('template')
 
-const createZipballUrl = (repository: UserRepositoriesResponse) => `${repository.url}/zipball`
-
 export default class GitClient {
     private octokit: Octokit = new Octokit()
 
@@ -23,7 +21,7 @@ export default class GitClient {
             .filter(isTemplateRepository)
             .map(repository => ({
                 name: repository.name,
-                downloadUrl: createZipballUrl(repository)
+                downloadUrl: repository.url
             }))
     }
 
