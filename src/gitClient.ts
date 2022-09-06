@@ -21,7 +21,7 @@ export default class GitClient {
             .filter(isTemplateRepository)
             .map(repository => ({
                 name: repository.name,
-                downloadUrl: repository.url
+                downloadUrl: repository.html_url
             }))
     }
 

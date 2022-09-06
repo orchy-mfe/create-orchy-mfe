@@ -1,42 +1,42 @@
 [
     {
         "name": "orchy-preact-js-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-preact-js-template"
     },
     {
         "name": "orchy-preact-js-typescript-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-typescript-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-preact-js-typescript-template"
     },
     {
         "name": "orchy-react-js-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-react-js-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-react-js-template"
     },
     {
         "name": "orchy-react-js-typescript-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-react-js-typescript-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-react-js-typescript-template"
     },
     {
         "name": "orchy-svelte-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-svelte-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-svelte-template"
     },
     {
         "name": "orchy-svelte-typescript-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-svelte-typescript-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-svelte-typescript-template"
     },
     {
         "name": "orchy-vanilla-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-vanilla-template"
     },
     {
         "name": "orchy-vanilla-typescript-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-typescript-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-vanilla-typescript-template"
     },
     {
         "name": "orchy-vue-js-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-vue-js-template"
     },
     {
         "name": "orchy-vue-js-typescript-template",
-        "downloadUrl": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-typescript-template"
+        "downloadUrl": "https://github.com/orchy-mfe/orchy-vue-js-typescript-template"
     }
 ]

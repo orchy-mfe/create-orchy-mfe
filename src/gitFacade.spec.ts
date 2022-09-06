@@ -14,24 +14,24 @@ describe('gitFacade', () => {
 
         expect(groupedRepositories).toEqual({
             "preact": {
-                "false": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-template",
-                "true": "https://api.github.com/repos/orchy-mfe/orchy-preact-js-typescript-template"
+                "false": "https://github.com/orchy-mfe/orchy-preact-js-template",
+                "true": "https://github.com/orchy-mfe/orchy-preact-js-typescript-template"
             },
             "react": {
-                "false": "https://api.github.com/repos/orchy-mfe/orchy-react-js-template",
-                "true": "https://api.github.com/repos/orchy-mfe/orchy-react-js-typescript-template"
+                "false": "https://github.com/orchy-mfe/orchy-react-js-template",
+                "true": "https://github.com/orchy-mfe/orchy-react-js-typescript-template"
             },
             "svelte": {
-                "false": "https://api.github.com/repos/orchy-mfe/orchy-svelte-template",
-                "true": "https://api.github.com/repos/orchy-mfe/orchy-svelte-typescript-template"
+                "false": "https://github.com/orchy-mfe/orchy-svelte-template",
+                "true": "https://github.com/orchy-mfe/orchy-svelte-typescript-template"
             },
             "vanilla": {
-                "false": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-template",
-                "true": "https://api.github.com/repos/orchy-mfe/orchy-vanilla-typescript-template"
+                "false": "https://github.com/orchy-mfe/orchy-vanilla-template",
+                "true": "https://github.com/orchy-mfe/orchy-vanilla-typescript-template"
             },
             "vue": {
-                "false": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-template",
-                "true": "https://api.github.com/repos/orchy-mfe/orchy-vue-js-typescript-template"
+                "false": "https://github.com/orchy-mfe/orchy-vue-js-template",
+                "true": "https://github.com/orchy-mfe/orchy-vue-js-typescript-template"
             }
         })
     })
