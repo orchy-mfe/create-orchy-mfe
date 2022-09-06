@@ -57,6 +57,7 @@ const promptsBuilder = (groupedRepositories: GroupedRepositories, parsedArgs: Ar
     {
       type: parsedArgs.ts ? null : 'confirm',
       name: 'ts',
+      initial: false,
       message: chalk.blue('Use TypeScript variant?'),
     },
   ]
