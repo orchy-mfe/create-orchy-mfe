@@ -10,18 +10,21 @@ import promptsBuilder from './promptsBuilder'
 
 const retrieveChoises = async (groupedRepositories: GroupedRepositories, retrievedArgs: Arguments) => {
     try {
-        return await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), {
-            onCancel: () => {
-                throw new Error(chalk.red('Operation cancelled'))
-            }
-        })
+        return {
+            ...retrievedArgs,
+            ...await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), {
+                onCancel: () => {
+                    throw new Error(chalk.red('Operation cancelled'))
+                }
+            })
+        }
     } catch (error: any) {
         console.log(error.message)
         return
     }
 }
 
-const downloadTemplate = async(choises: Required<Arguments>, groupedRepositories: GroupedRepositories) => {
+const downloadTemplate = async (choises: Required<Arguments>, groupedRepositories: GroupedRepositories) => {
     const destinationPath = path.join(choises.directory, choises.name)
 
     const repositoryToDownload = groupedRepositories[choises.template][`${choises.ts}`]

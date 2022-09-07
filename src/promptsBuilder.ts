@@ -38,32 +38,33 @@ const promptsBuilder = (groupedRepositories: GroupedRepositories, parsedArgs: Ar
   console.clear()
 
   const groupedRepositoriesNames = Object.keys(groupedRepositories)
+  const indexOfTemplate = parsedArgs.template ? groupedRepositoriesNames.indexOf(parsedArgs.template) : -1
 
   return [
     {
       type: parsedArgs.name ? null : 'text',
       name: 'name',
       message: chalk.green('Project name:'),
-      initial: 'orchy-mfe',
+      initial: parsedArgs.name || 'orchy-mfe',
       validate: (name: string) => isValidPackageName(name) || 'Invalid package.json name'
     },
     {
       type: parsedArgs.directory ? null : 'text',
       name: 'directory',
       message: chalk.cyan('Target directory:'),
-      initial: './',
+      initial: parsedArgs.directory || './',
     },
     {
-      type: parsedArgs.template && groupedRepositoriesNames.includes(parsedArgs.template) ? null : 'select',
+      type: indexOfTemplate >= 0 ? null : 'select',
       name: 'template',
       message: chalk.grey('Choose a template:'),
-      initial: 0,
+      initial: Math.max(indexOfTemplate, 0),
       choices: groupedRepositoriesNames.map(choicesMapper())
     },
     {
       type: parsedArgs.ts ? null : 'confirm',
       name: 'ts',
-      initial: false,
+      initial: parsedArgs.ts,
       message: chalk.blue('Use TypeScript variant?'),
     },
   ]
