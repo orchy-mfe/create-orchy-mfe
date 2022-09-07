@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 import chalk from 'chalk'
 import prompts from 'prompts'
 import fs from 'fs/promises'
 import path from 'path'
-import { download, extract } from 'gitly'
+import gitly from 'gitly'
 
 import argsParser, { Arguments } from './argsParser'
 import GitFacade, { GroupedRepositories } from "./gitFacade"
@@ -14,7 +15,7 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
             ...retrievedArgs,
             ...await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), {
                 onCancel: () => {
-                    throw new Error(chalk.red('Operation cancelled'))
+                    throw new Error(chalk.red('✖ Operation cancelled'))
                 }
             })
         }
@@ -29,9 +30,9 @@ const downloadTemplate = async (choises: Required<Arguments>, groupedRepositorie
 
     const repositoryToDownload = groupedRepositories[choises.template][`${choises.ts}`]
 
-    const gitlyDownloadPath = await download(repositoryToDownload)
+    // @ts-ignore
+    const [gitlyDownloadPath] = await gitly.default(repositoryToDownload, destinationPath, {})
 
-    await extract(gitlyDownloadPath, destinationPath)
     await fs.rm(gitlyDownloadPath)
 }
 
