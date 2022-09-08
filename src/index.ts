@@ -23,7 +23,6 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
         }
     } catch (error: any) {
         console.log(error.message)
-        return
     }
 }
 
