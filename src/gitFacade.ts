@@ -1,6 +1,6 @@
 import GitClient, { GitTemplateRepositories } from "./gitClient";
 
-export type GroupedRepositories = Record<string, Record<'true' | 'false', string>>
+export type GroupedRepositories = Record<string, Partial<Record<'true' | 'false', string>>>
 
 const stripNamePrefixSuffix = (repository: GitTemplateRepositories) => ({ ...repository, name: repository.name.split('-').slice(1, -1).join('-') })
 

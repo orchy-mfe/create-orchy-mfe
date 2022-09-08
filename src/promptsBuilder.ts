@@ -62,7 +62,7 @@ const promptsBuilder = (groupedRepositories: GroupedRepositories, parsedArgs: Ar
       choices: groupedRepositoriesNames.map(choicesMapper())
     },
     {
-      type: parsedArgs.ts ? null : 'confirm',
+      type: (_, {template}) => parsedArgs.ts || !groupedRepositories[template].true ? null : 'confirm',
       name: 'ts',
       initial: parsedArgs.ts,
       message: chalk.blue('Use TypeScript variant?'),
