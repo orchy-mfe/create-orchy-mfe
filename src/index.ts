@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 import chalk from 'chalk'
 import prompts from 'prompts'
-import fs from 'fs/promises'
-import path from 'path'
-import gitly from 'gitly'
 
 import argsParser, { Arguments } from './argsParser'
 import GitFacade, { GroupedRepositories } from "./gitFacade"
@@ -26,30 +23,19 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
     }
 }
 
-const downloadTemplate = async (choises: Required<Arguments>, groupedRepositories: GroupedRepositories) => {
-    const destinationPath = path.join(choises.directory, choises.name)
-    
-    const template = groupedRepositories[choises.template]
-    const repositoryToDownload = template[`${choises.ts}`] || template['false']
-
-    // @ts-ignore
-    const [gitlyDownloadPath] = await gitly.default(repositoryToDownload, destinationPath, {})
-
-    await fs.rm(gitlyDownloadPath)
-}
-
 const main = async () => {
     const retrievedArgs = argsParser()
 
     console.log(chalk.blue("Retrieving available templates..."));
-    const groupedRepositories: GroupedRepositories = await new GitFacade().retrieveGroupedRepositories()
+    const gitFacade = new GitFacade()
+    const groupedRepositories: GroupedRepositories = await gitFacade.retrieveGroupedRepositories()
 
     const choises = await retrieveChoises(groupedRepositories, retrievedArgs) as Required<Arguments> | undefined
     if (!choises) {
         return
     }
 
-    await downloadTemplate(choises, groupedRepositories)
+    await gitFacade.downloadTemplate(choises, groupedRepositories)
 
     console.log(chalk.green("Operation completed successfully!"))
 }
