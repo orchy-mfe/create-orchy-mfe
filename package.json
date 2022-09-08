@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Orchy micro-frontends template scaffolder",
   "bin": {
-    "create-orchy-mfe": "dist/index.js",
-    "com": "dist/index.js"
+    "create-orchy-mfe": "dist/index.mjs",
+    "com": "dist/index.mjs"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "start": "unbuild --stub",
+    "build": "unbuild",
     "test": "vitest"
   },
   "repository": {
