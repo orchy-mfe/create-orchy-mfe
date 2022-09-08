@@ -9,15 +9,17 @@ import argsParser, { Arguments } from './argsParser'
 import GitFacade, { GroupedRepositories } from "./gitFacade"
 import promptsBuilder from './promptsBuilder'
 
+const PROMPTS_OPTIONS = {
+    onCancel: () => {
+        throw new Error(chalk.red('✖ Operation cancelled'))
+    }
+}
+
 const retrieveChoises = async (groupedRepositories: GroupedRepositories, retrievedArgs: Arguments) => {
     try {
         return {
             ...retrievedArgs,
-            ...await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), {
-                onCancel: () => {
-                    throw new Error(chalk.red('✖ Operation cancelled'))
-                }
-            })
+            ...await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), PROMPTS_OPTIONS)
         }
     } catch (error: any) {
         console.log(error.message)
