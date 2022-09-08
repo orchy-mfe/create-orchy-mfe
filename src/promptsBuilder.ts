@@ -57,7 +57,7 @@ const promptsBuilder = (groupedRepositories: GroupedRepositories, parsedArgs: Ar
     {
       type: indexOfTemplate >= 0 ? null : 'select',
       name: 'template',
-      message: chalk.grey('Choose a template:'),
+      message: chalk.magenta('Choose a template:'),
       initial: Math.max(indexOfTemplate, 0),
       choices: groupedRepositoriesNames.map(choicesMapper())
     },
