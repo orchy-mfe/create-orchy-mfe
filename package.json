@@ -1,10 +1,10 @@
 {
   "name": "create-orchy-mfe",
   "version": "1.0.0",
-  "description": "",
+  "description": "Orchy micro-frontends template scaffolder",
   "bin": {
-    "create-orchy-mfe": "dist/index.mjs",
-    "com": "dist/index.mjs"
+    "create-orchy-mfe": "dist/index.js",
+    "com": "dist/index.js"
   },
   "files": [
     "dist"
@@ -17,7 +17,12 @@
     "type": "git",
     "url": "git+https://github.com/orchy-mfe/create-orchy-mfe.git"
   },
-  "keywords": [],
+  "keywords": [
+    "orchy-mfe",
+    "microfrontends",
+    "microfrontend",
+    "scaffolder"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
