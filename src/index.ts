@@ -49,6 +49,8 @@ const main = async () => {
     }
 
     await downloadTemplate(choises, groupedRepositories)
+
+    console.log(chalk.green("Operation completed successfully!"))
 }
 
 main()
