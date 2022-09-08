@@ -28,8 +28,9 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
 
 const downloadTemplate = async (choises: Required<Arguments>, groupedRepositories: GroupedRepositories) => {
     const destinationPath = path.join(choises.directory, choises.name)
-
-    const repositoryToDownload = groupedRepositories[choises.template][`${choises.ts}`]
+    
+    const template = groupedRepositories[choises.template]
+    const repositoryToDownload = template[`${choises.ts}`] || template['false']
 
     // @ts-ignore
     const [gitlyDownloadPath] = await gitly.default(repositoryToDownload, destinationPath, {})
