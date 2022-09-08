@@ -35,7 +35,7 @@ const main = async () => {
         return
     }
 
-    await gitFacade.downloadTemplate(choises, groupedRepositories)
+    await gitFacade.downloadTemplate(choises)
 
     console.log(chalk.green("Operation completed successfully!"))
 }

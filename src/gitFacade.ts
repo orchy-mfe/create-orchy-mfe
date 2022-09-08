@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs/promises'
+import gitly from 'gitly'
 
 import { Arguments } from "./argsParser";
 import GitClient, { GitTemplateRepositories } from "./gitClient";
@@ -25,16 +26,17 @@ const groupRepositoriesByFramework = (repositories: GitTemplateRepositories[]) =
 
 export default class GitFacade {
     private gitClient = new GitClient()
+    private groupedRepositories?: GroupedRepositories
 
-    async retrieveGroupedRepositories() {
+    async retrieveGroupedRepositories(): Promise<GroupedRepositories> {
         const repositories = await this.gitClient.retrieveRepositories()
-        return groupRepositoriesByFramework(repositories)
+        return this.groupedRepositories = groupRepositoriesByFramework(repositories)
     }
 
-    async downloadTemplate (choises: Required<Arguments>, groupedRepositories: GroupedRepositories) {
+    async downloadTemplate (choises: Required<Arguments>) {
         const destinationPath = path.join(choises.directory, choises.name)
         
-        const template = groupedRepositories[choises.template]
+        const template = this.groupedRepositories![choises.template]
         const repositoryToDownload = template[`${choises.ts}`] || template['false']
     
         // @ts-ignore
