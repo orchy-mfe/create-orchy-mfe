@@ -1,22 +1,22 @@
-import { PrevCaller } from 'prompts'
-import { describe, it, expect } from 'vitest'
-import { Arguments } from '../args/argsParser'
-import { GroupedRepositories } from '../git/gitFacade'
+import {PrevCaller} from 'prompts'
+import {describe, it, expect} from 'vitest'
+import {Arguments} from '../args/argsParser'
+import {GroupedRepositories} from '../git/gitFacade'
 
 import promptsBuilder from './promptsBuilder'
 
 describe('promptsBuilder', () => {
     const groupedRepositories: GroupedRepositories = {
-        "react": {
-            "true": "https://test.react",
-            "false": "https://test.react"
+        'react': {
+            'true': 'https://test.react',
+            'false': 'https://test.react'
         },
-        "vue": {
-            "true": "https://test.vue",
-            "false": "https://test.vue"
+        'vue': {
+            'true': 'https://test.vue',
+            'false': 'https://test.vue'
         },
-        "jsOnly": {
-            "false": "http://js.only"
+        'jsOnly': {
+            'false': 'http://js.only'
         }
     }
 

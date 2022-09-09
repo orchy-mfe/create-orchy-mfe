@@ -1,8 +1,8 @@
-import chalk, {ChalkInstance} from "chalk"
-import prompts from "prompts"
+import chalk, {ChalkInstance} from 'chalk'
+import prompts from 'prompts'
 
-import { Arguments } from "../args/argsParser"
-import { GroupedRepositories } from "../git/gitFacade"
+import {Arguments} from '../args/argsParser'
+import {GroupedRepositories} from '../git/gitFacade'
 
 const PACKAGE_JSON_NAME_REGEX = /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/
 
@@ -25,7 +25,7 @@ const choicesMapper = () => {
   const usedColors: ChalkInstance[] = []
   return (name: string) => {
     let color
-    while((color = randomColor()) && usedColors.includes(color)) {}
+    while((color = randomColor()) && usedColors.includes(color))
     usedColors.push(color)
     return {
       title: color(name),

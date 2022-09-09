@@ -1,8 +1,8 @@
 import path from 'path'
 import fs from 'fs'
 
-import { Arguments } from "../args/argsParser"
-import { GitTemplateRepositories } from "../git/gitClient"
+import {Arguments} from '../args/argsParser'
+import {GitTemplateRepositories} from '../git/gitClient'
 
 const FILES_TO_REPLACE = [
     'package.json',

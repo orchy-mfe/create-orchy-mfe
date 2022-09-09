@@ -1,0 +1,33 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "settings": {
+        "jest": {
+            "version": 29
+        }
+    },
+    "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "no-unused-vars": "error",
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            2,
+            "single",
+            "avoid-escape"
+        ],
+        "object-curly-spacing": [
+            2,
+            "never"
+        ]
+    }
+}

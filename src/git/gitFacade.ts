@@ -2,13 +2,13 @@ import path from 'path'
 import fs from 'fs/promises'
 import gitly from 'gitly'
 
-import { Arguments } from "../args/argsParser";
-import GitClient, { GitTemplateRepositories } from "./gitClient";
-import replaceTemplateName from '../template-customizer/ReplaceTemplateName';
+import {Arguments} from '../args/argsParser'
+import GitClient, {GitTemplateRepositories} from './gitClient'
+import replaceTemplateName from '../template-customizer/ReplaceTemplateName'
 
 export type GroupedRepositories = Record<string, Partial<Record<'true' | 'false', GitTemplateRepositories>>>
 
-const stripNamePrefixSuffix = (repository: GitTemplateRepositories) => ({ ...repository, templateName: repository.name.split('-').slice(1, -1).join('-') })
+const stripNamePrefixSuffix = (repository: GitTemplateRepositories) => ({...repository, templateName: repository.name.split('-').slice(1, -1).join('-')})
 
 const groupRepositoriesByFramework = (repositories: GitTemplateRepositories[]) => {
     return repositories

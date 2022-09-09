@@ -1,16 +1,16 @@
-import { describe, it, vi, expect } from 'vitest'
+import {describe, it, vi, expect} from 'vitest'
 import fs from 'fs/promises'
 
 import GitClient from './gitClient'
 import GitFacade from './gitFacade'
 import repositoriesExtracted from '../repositories-extracted.json'
-import { Arguments } from '../args/argsParser'
+import {Arguments} from '../args/argsParser'
 
 vi.mock('gitly', () => ({
     default: {
         // @ts-ignore
         default: (repositoryToDownload, destinarionPath) => {
-            const hasRightParams = destinarionPath === '/a/b' && repositoryToDownload === "https://github.com/orchy-mfe/orchy-react-js-template"
+            const hasRightParams = destinarionPath === '/a/b' && repositoryToDownload === 'https://github.com/orchy-mfe/orchy-react-js-template'
             return hasRightParams ? Promise.resolve(['foo']) : Promise.reject()
         }
     }
@@ -21,7 +21,7 @@ describe('gitFacade', () => {
 
     const gitFacade = new GitFacade()
 
-    describe("retrieveGroupedRepositories", () => {
+    describe('retrieveGroupedRepositories', () => {
         it('correctly aggregate git response', async () => {
             const groupedRepositories = await gitFacade.retrieveGroupedRepositories()
 
@@ -90,7 +90,7 @@ describe('gitFacade', () => {
         })
     })
 
-    describe("downloadTemplate", () => {
+    describe('downloadTemplate', () => {
         const choises: Required<Arguments> = {
             directory: '/a',
             name: 'b',
@@ -101,7 +101,7 @@ describe('gitFacade', () => {
         // @ts-ignore
         vi.spyOn(fs, 'rm').mockImplementation((path: string) => path === 'foo' ? Promise.resolve() : Promise.reject())
 
-        it("correctly downloads template", async () => {
+        it('correctly downloads template', async () => {
             await expect(gitFacade.downloadTemplate(choises)).resolves.not.toThrow()
         })
     })

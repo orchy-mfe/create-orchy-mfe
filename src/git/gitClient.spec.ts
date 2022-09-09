@@ -1,4 +1,4 @@
-import { describe, it, vi, expect } from 'vitest'
+import {describe, it, vi, expect} from 'vitest'
 
 import GitClient from './gitClient'
 import repositoriesResponse from '../repositories-response.json'
@@ -9,7 +9,7 @@ describe('gitClient', () => {
         Octokit: vi.fn().mockImplementation(() => ({
             rest: {
                 repos: {
-                    listForUser: () => Promise.resolve({ data: repositoriesResponse })
+                    listForUser: () => Promise.resolve({data: repositoriesResponse})
                 },
             }
         }))

@@ -2,8 +2,8 @@
 import chalk from 'chalk'
 import prompts from 'prompts'
 
-import argsParser, { Arguments } from './args/argsParser'
-import GitFacade, { GroupedRepositories } from "./git/gitFacade"
+import argsParser, {Arguments} from './args/argsParser'
+import GitFacade, {GroupedRepositories} from './git/gitFacade'
 import promptsBuilder from './prompts/promptsBuilder'
 
 const PROMPTS_OPTIONS = {
@@ -26,7 +26,7 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
 const main = async () => {
     const retrievedArgs = argsParser()
 
-    console.log(chalk.blue("Retrieving available templates..."));
+    console.log(chalk.blue('Retrieving available templates...'))
     const gitFacade = new GitFacade()
     const groupedRepositories: GroupedRepositories = await gitFacade.retrieveGroupedRepositories()
 
@@ -37,7 +37,7 @@ const main = async () => {
 
     await gitFacade.downloadTemplate(choises)
 
-    console.log(chalk.green("Operation completed successfully!"))
+    console.log(chalk.green('Operation completed successfully!'))
 }
 
 main()
