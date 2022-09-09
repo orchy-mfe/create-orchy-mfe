@@ -26,27 +26,67 @@ describe('gitFacade', () => {
             const groupedRepositories = await gitFacade.retrieveGroupedRepositories()
 
             expect(groupedRepositories).toEqual({
-                "preact": {
-                    "false": "https://github.com/orchy-mfe/orchy-preact-js-template",
-                    "true": "https://github.com/orchy-mfe/orchy-preact-js-typescript-template"
+                preact: {
+                  false: {
+                    name: 'orchy-preact-js-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-preact-js-template',
+                    templateName: 'preact-js'
+                  },
+                  true: {
+                    name: 'orchy-preact-js-typescript-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-preact-js-typescript-template',
+                    templateName: 'preact-js-typescript'
+                  }
                 },
-                "react": {
-                    "false": "https://github.com/orchy-mfe/orchy-react-js-template",
-                    "true": "https://github.com/orchy-mfe/orchy-react-js-typescript-template"
+                react: {
+                  false: {
+                    name: 'orchy-react-js-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-react-js-template',
+                    templateName: 'react-js'
+                  },
+                  true: {
+                    name: 'orchy-react-js-typescript-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-react-js-typescript-template',
+                    templateName: 'react-js-typescript'
+                  }
                 },
-                "svelte": {
-                    "false": "https://github.com/orchy-mfe/orchy-svelte-template",
-                    "true": "https://github.com/orchy-mfe/orchy-svelte-typescript-template"
+                svelte: {
+                  false: {
+                    name: 'orchy-svelte-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-svelte-template',
+                    templateName: 'svelte'
+                  },
+                  true: {
+                    name: 'orchy-svelte-typescript-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-svelte-typescript-template',
+                    templateName: 'svelte-typescript'
+                  }
                 },
-                "vanilla": {
-                    "false": "https://github.com/orchy-mfe/orchy-vanilla-template",
-                    "true": "https://github.com/orchy-mfe/orchy-vanilla-typescript-template"
+                vanilla: {
+                  false: {
+                    name: 'orchy-vanilla-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-vanilla-template',
+                    templateName: 'vanilla'
+                  },
+                  true: {
+                    name: 'orchy-vanilla-typescript-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-vanilla-typescript-template',
+                    templateName: 'vanilla-typescript'
+                  }
                 },
-                "vue": {
-                    "false": "https://github.com/orchy-mfe/orchy-vue-js-template",
-                    "true": "https://github.com/orchy-mfe/orchy-vue-js-typescript-template"
+                vue: {
+                  false: {
+                    name: 'orchy-vue-js-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-vue-js-template',
+                    templateName: 'vue-js'
+                  },
+                  true: {
+                    name: 'orchy-vue-js-typescript-template',
+                    downloadUrl: 'https://github.com/orchy-mfe/orchy-vue-js-typescript-template',
+                    templateName: 'vue-js-typescript'
+                  }
                 }
-            })
+              })
         })
     })
 

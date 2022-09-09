@@ -5,20 +5,20 @@ import gitly from 'gitly'
 import { Arguments } from "../args/argsParser";
 import GitClient, { GitTemplateRepositories } from "./gitClient";
 
-export type GroupedRepositories = Record<string, Partial<Record<'true' | 'false', string>>>
+export type GroupedRepositories = Record<string, Partial<Record<'true' | 'false', GitTemplateRepositories>>>
 
-const stripNamePrefixSuffix = (repository: GitTemplateRepositories) => ({ ...repository, name: repository.name.split('-').slice(1, -1).join('-') })
+const stripNamePrefixSuffix = (repository: GitTemplateRepositories) => ({ ...repository, templateName: repository.name.split('-').slice(1, -1).join('-') })
 
 const groupRepositoriesByFramework = (repositories: GitTemplateRepositories[]) => {
     return repositories
         .map(stripNamePrefixSuffix)
-        .reduce((acc, {name, downloadUrl}) => {
-            const nameWithoutTypescript = name.replace('-typescript', '')
-            const isTypeScript = name !== nameWithoutTypescript
+        .reduce((acc, repository) => {
+            const nameWithoutTypescript = repository.templateName.replace('-typescript', '')
+            const isTypeScript = repository.templateName !== nameWithoutTypescript
             const templateKind = nameWithoutTypescript.split('-').at(0) as string
 
             acc[templateKind] = acc[templateKind] || {}
-            acc[templateKind][`${isTypeScript}`] = downloadUrl
+            acc[templateKind][`${isTypeScript}`] = repository
 
             return acc
         }, {} as GroupedRepositories)
@@ -40,7 +40,7 @@ export default class GitFacade {
         const repositoryToDownload = template[`${choises.ts}`] || template['false']
     
         // @ts-ignore
-        const [gitlyDownloadPath] = await gitly.default(repositoryToDownload, destinationPath, {})
+        const [gitlyDownloadPath] = await gitly.default(repositoryToDownload?.downloadUrl, destinationPath, {})
     
         await fs.rm(gitlyDownloadPath)
     }
