@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import prompts from 'prompts'
 
 import argsParser, { Arguments } from './argsParser'
-import GitFacade, { GroupedRepositories } from "./gitFacade"
+import GitFacade, { GroupedRepositories } from "./git/gitFacade"
 import promptsBuilder from './promptsBuilder'
 
 const PROMPTS_OPTIONS = {

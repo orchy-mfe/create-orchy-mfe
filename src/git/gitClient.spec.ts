@@ -1,8 +1,8 @@
 import { describe, it, vi, expect } from 'vitest'
 
 import GitClient from './gitClient'
-import repositoriesResponse from './repositories-response.json'
-import repositoriesExtracted from './repositories-extracted.json'
+import repositoriesResponse from '../repositories-response.json'
+import repositoriesExtracted from '../repositories-extracted.json'
 
 describe('gitClient', () => {
     vi.mock('@octokit/rest', () => ({
