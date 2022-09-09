@@ -4,7 +4,7 @@ import prompts from 'prompts'
 
 import argsParser, { Arguments } from './args/argsParser'
 import GitFacade, { GroupedRepositories } from "./git/gitFacade"
-import promptsBuilder from './promptsBuilder'
+import promptsBuilder from './prompts/promptsBuilder'
 
 const PROMPTS_OPTIONS = {
     onCancel: () => {

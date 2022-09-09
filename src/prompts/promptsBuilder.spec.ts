@@ -1,7 +1,7 @@
 import { PrevCaller } from 'prompts'
 import { describe, it, expect } from 'vitest'
-import { Arguments } from './args/argsParser'
-import { GroupedRepositories } from './git/gitFacade'
+import { Arguments } from '../args/argsParser'
+import { GroupedRepositories } from '../git/gitFacade'
 
 import promptsBuilder from './promptsBuilder'
 
