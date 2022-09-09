@@ -4,7 +4,7 @@ import fs from 'fs/promises'
 import GitClient from './gitClient'
 import GitFacade from './gitFacade'
 import repositoriesExtracted from '../repositories-extracted.json'
-import { Arguments } from '../argsParser'
+import { Arguments } from '../args/argsParser'
 
 vi.mock('gitly', () => ({
     default: {

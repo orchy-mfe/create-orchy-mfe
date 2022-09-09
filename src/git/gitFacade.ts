@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs/promises'
 import gitly from 'gitly'
 
-import { Arguments } from "../argsParser";
+import { Arguments } from "../args/argsParser";
 import GitClient, { GitTemplateRepositories } from "./gitClient";
 
 export type GroupedRepositories = Record<string, Partial<Record<'true' | 'false', string>>>

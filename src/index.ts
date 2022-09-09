@@ -2,7 +2,7 @@
 import chalk from 'chalk'
 import prompts from 'prompts'
 
-import argsParser, { Arguments } from './argsParser'
+import argsParser, { Arguments } from './args/argsParser'
 import GitFacade, { GroupedRepositories } from "./git/gitFacade"
 import promptsBuilder from './promptsBuilder'
 

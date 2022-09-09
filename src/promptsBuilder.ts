@@ -1,7 +1,7 @@
 import chalk, {ChalkInstance} from "chalk"
 import prompts from "prompts"
 
-import { Arguments } from "./argsParser"
+import { Arguments } from "./args/argsParser"
 import { GroupedRepositories } from "./git/gitFacade"
 
 const PACKAGE_JSON_NAME_REGEX = /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/
