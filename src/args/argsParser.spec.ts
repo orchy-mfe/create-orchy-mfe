@@ -60,19 +60,37 @@ describe('argsParser', () => {
     })
 
     describe('ts flag', () => {
-        it('parse correctly long flag', () => {
+        describe('parse correctly long flag', () => {
+           it('for true value', () => {
             process.argv = ['npx', 'create-orchy-mfe', '--ts']
             const flags = argsParser()
     
             expect(flags).toEqual({ts: true, T: true})
-        })
+           })
 
-        it('parse correctly short flag', () => {
-            process.argv = ['npx', 'create-orchy-mfe', '--T']
+           it('for false value', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '--ts=false']
             const flags = argsParser()
     
-            expect(flags).toEqual({ts: true, T: true})
+            expect(flags).toEqual({ts: false, T: false})
+           })
         })
+
+        describe('parse correctly short flag', () => {
+            it('for true value', () => {
+             process.argv = ['npx', 'create-orchy-mfe', '-T']
+             const flags = argsParser()
+     
+             expect(flags).toEqual({ts: true, T: true})
+            })
+ 
+            it('for false value', () => {
+             process.argv = ['npx', 'create-orchy-mfe', '-T=false']
+             const flags = argsParser()
+     
+             expect(flags).toEqual({ts: false, T: false})
+            })
+         })
     })
 
     describe('all flags', () => {
