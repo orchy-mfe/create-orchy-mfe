@@ -35,6 +35,8 @@ const main = async () => {
         return
     }
 
+    console.log(chalk.blue('Downloading template...'))
+
     await gitFacade.downloadTemplate(choises)
 
     console.log(chalk.green('Operation completed successfully!'))
