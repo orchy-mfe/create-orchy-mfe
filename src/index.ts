@@ -16,10 +16,10 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
     try {
         return {
             ...retrievedArgs,
-            ...await prompts<any>(promptsBuilder(groupedRepositories, retrievedArgs), PROMPTS_OPTIONS)
+            ...await prompts(promptsBuilder(groupedRepositories, retrievedArgs), PROMPTS_OPTIONS)
         }
-    } catch (error: any) {
-        console.log(error.message)
+    } catch (error) {
+        console.log((error as Error).message)
     }
 }
 
