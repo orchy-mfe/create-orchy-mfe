@@ -19,7 +19,7 @@ const retrieveChoises = async (groupedRepositories: GroupedRepositories, retriev
             ...await prompts(promptsBuilder(groupedRepositories, retrievedArgs), PROMPTS_OPTIONS)
         }
     } catch (error) {
-        console.log((error as Error).message)
+        console.log(chalk.red((error as Error).message))
     }
 }
 
