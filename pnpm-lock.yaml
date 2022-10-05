@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@octokit/rest': ^19.0.4
   '@types/args': ^5.0.0
-  '@types/prompts': ^2.0.14
+  '@types/prompts': ^2.4.1
   '@typescript-eslint/eslint-plugin': ^5.39.0
   '@typescript-eslint/parser': ^5.39.0
   args: ^5.0.3
@@ -26,7 +26,7 @@ dependencies:
 
 devDependencies:
   '@types/args': 5.0.0
-  '@types/prompts': 2.0.14
+  '@types/prompts': 2.4.1
   '@typescript-eslint/eslint-plugin': 5.39.0_xyciw6oqjoiiono4dhv3uhn5my
   '@typescript-eslint/parser': 5.39.0_ypn2ylkkyfa5i233caldtndbqa
   eslint: 8.24.0
@@ -588,8 +588,8 @@ packages:
     resolution: {integrity: sha512-6bbDaETVi8oyIARulOE9qF1/Qdi/23z6emrUh0fNJRUmjznqrixD4MpGDdgOFk5Xb0m2H6Xu42JGdvAxaJR/wA==}
     dev: true
 
-  /@types/prompts/2.0.14:
-    resolution: {integrity: sha512-HZBd99fKxRWpYCErtm2/yxUZv6/PBI9J7N4TNFffl5JbrYMHBwF25DjQGTW3b3jmXq+9P6/8fCIb2ee57BFfYA==}
+  /@types/prompts/2.4.1:
+    resolution: {integrity: sha512-1Mqzhzi9W5KlooNE4o0JwSXGUDeQXKldbGn9NO4tpxwZbHXYd+WcKpCksG2lbhH7U9I9LigfsdVsP2QAY0lNPA==}
     dependencies:
       '@types/node': 18.7.14
     dev: true
