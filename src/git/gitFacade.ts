@@ -41,7 +41,7 @@ export default class GitFacade {
         const repositoryToDownload = (template[`${choises.ts}`] || template['false'])!
     
         // @ts-ignore
-        const [gitlyDownloadPath] = await gitly.default(repositoryToDownload.downloadUrl, destinationPath, {})
+        const [gitlyDownloadPath] = await (gitly.default || gitly)(repositoryToDownload.downloadUrl, destinationPath, {})
 
         await replaceTemplateName(choises, repositoryToDownload)
     
