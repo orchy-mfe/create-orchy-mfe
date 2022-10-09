@@ -1,7 +1,7 @@
 {
   "name": "create-orchy-mfe",
-  "version": "1.0.0",
-  "description": "Orchy micro-frontends template scaffolder",
+  "version": "0.1.0",
+  "description": "Orchy micro frontends template scaffolder",
   "bin": {
     "create-orchy-mfe": "dist/index.mjs",
     "com": "dist/index.mjs"
