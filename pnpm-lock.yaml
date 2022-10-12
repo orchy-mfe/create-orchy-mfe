@@ -7,7 +7,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.40.0
   '@typescript-eslint/parser': ^5.40.0
   args: ^5.0.3
-  chalk: ^5.1.1
+  chalk: ^5.1.2
   eslint: ^8.25.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
@@ -20,7 +20,7 @@ specifiers:
 dependencies:
   '@octokit/rest': 19.0.4
   args: 5.0.3
-  chalk: 5.1.1
+  chalk: 5.1.2
   gitly: 2.2.2
   prompts: 2.4.2
 
@@ -881,8 +881,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /chalk/5.1.1:
-    resolution: {integrity: sha512-OItMegkSDU3P7OJRWBbNRsQsL8SzgwlIGXSZRVfHCLBYrDgzYDuozwDMwvEDpiZdjr50tdOTbTzuubirtEozsg==}
+  /chalk/5.1.2:
+    resolution: {integrity: sha512-E5CkT4jWURs1Vy5qGJye+XwCkNj7Od3Af7CP6SujMetSMkLs8Do2RWJK5yx1wamHV/op8Rz+9rltjaTQWDnEFQ==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   /check-error/1.0.2:
@@ -2549,7 +2549,7 @@ packages:
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.0
       '@rollup/plugin-replace': 4.0.0_rollup@2.79.0
       '@rollup/pluginutils': 4.2.1
-      chalk: 5.1.1
+      chalk: 5.1.2
       consola: 2.15.3
       defu: 6.1.0
       esbuild: 0.15.7
