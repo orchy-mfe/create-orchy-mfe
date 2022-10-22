@@ -6,7 +6,7 @@ import os from 'os'
 import {applicationStart} from './applicationStart'
 
 describe('all templates are instantiated', () => {
-    const supportedTemplates = ['react', 'preact', 'vue', 'svelte', 'vanilla']
+    const supportedTemplates = ['react', 'preact', 'vue', 'svelte', 'vanilla', 'solid']
     const withTypeScript = [true, false]
     const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'create-orchy-templates'))
 
