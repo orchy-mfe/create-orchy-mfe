@@ -11,7 +11,7 @@ specifiers:
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-prettier: ^4.2.1
-  gitly: ^2.2.2
+  gitly: ^2.2.3
   prompts: ^2.4.2
   typescript: ^4.9.4
   unbuild: ^1.0.2
@@ -21,7 +21,7 @@ dependencies:
   '@octokit/rest': 19.0.5
   args: 5.0.3
   chalk: 5.2.0
-  gitly: 2.2.2
+  gitly: 2.2.3
   prompts: 2.4.2
 
 devDependencies:
@@ -818,11 +818,12 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios/1.2.2:
+    resolution: {integrity: sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==}
     dependencies:
       follow-redirects: 1.15.1
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -1551,11 +1552,11 @@ packages:
     resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}
     dev: true
 
-  /gitly/2.2.2:
-    resolution: {integrity: sha512-tY7/7LboVM6ULFaLQWZNpiH8HEMvgOW+UBhPkJRCQGREt4EGW11cTAKA1jXxk2XzvSVUwWjiFRkY2VCXzsS3cQ==}
+  /gitly/2.2.3:
+    resolution: {integrity: sha512-tDxFvT5ijj0+zC9nFVZwkn2+WtZK7zuhLZHTMzVsHQ27BWP/cqlXeyayJTyA1GVuQkPPl4f27ntvMwsqCqgeyw==}
     dependencies:
-      axios: 0.27.2
-      tar: 6.1.11
+      axios: 1.2.2
+      tar: 6.1.13
     transitivePeerDependencies:
       - debug
     dev: false
@@ -1899,6 +1900,13 @@ packages:
       yallist: 4.0.0
     dev: false
 
+  /minipass/4.0.0:
+    resolution: {integrity: sha512-g2Uuh2jEKoht+zvO6vJqXmYpflPqzRBT+Th2h01DKh5z7wbY/AZ2gCQ78cP70YoHPyFdY30YBV5WxgLOEwOykw==}
+    engines: {node: '>=8'}
+    dependencies:
+      yallist: 4.0.0
+    dev: false
+
   /minizlib/2.1.2:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
@@ -2118,6 +2126,10 @@ packages:
       sisteransi: 1.0.5
     dev: false
 
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
+
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
@@ -2299,13 +2311,13 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tar/6.1.11:
-    resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}
-    engines: {node: '>= 10'}
+  /tar/6.1.13:
+    resolution: {integrity: sha512-jdIBIN6LTIe2jqzay/2vtYLlBHa3JF42ot3h1dW8Q0PaAG4v8rm0cvpVePtau5C6OKXGGcgO9q2AMNSWxiLqKw==}
+    engines: {node: '>=10'}
     dependencies:
       chownr: 2.0.0
       fs-minipass: 2.1.0
-      minipass: 3.3.4
+      minipass: 4.0.0
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
