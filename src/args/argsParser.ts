@@ -17,7 +17,7 @@ const argsParser = (): Arguments => {
         .option('-n --name <type>', 'The name of your new micro-frontend')
         .option('-d --directory <type>', 'The directory where your micro-frontend will be located')
         .option('-t --template <type>', 'The template that will be used generate your micro-frontend')
-        .option('-T --ts', 'Use the TypeScript variant of the template')
+        .option('-T --ts', 'Use the TypeScript variant of the template', false)
 
     program.parse()
 
