@@ -10,7 +10,7 @@ export interface Arguments {
 const manageBooleanValue = (value = '') => {
     const lowerCaseValue = `${value}`.toLowerCase()
     return ['true', 'false'].includes(lowerCaseValue) ? JSON.parse(lowerCaseValue) : undefined
-} 
+}
 
 const argsParser = (): Arguments => {
     args
