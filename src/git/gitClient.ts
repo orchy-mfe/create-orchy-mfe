@@ -12,7 +12,7 @@ type UserRepositoriesResponse = RestEndpointMethodTypes['repos']['listForUser'][
 const isTemplateRepository = (repository: UserRepositoriesResponse) => repository.name.startsWith('orchy') && repository.name.endsWith('template')
 
 export default class GitClient {
-    private octokit: Octokit = new Octokit()
+    private octokit: Octokit = new Octokit({auth: process.env.GITHUB_AUTH_TOKEN})
 
     async retrieveRepositories(): Promise<GitTemplateRepositories[]> {
         const repositoriesList = await this.octokit.rest.repos.listForUser({username: ORGANIZATION_NAME})
