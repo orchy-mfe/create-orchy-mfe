@@ -13,7 +13,7 @@ describe('all templates are instantiated', () => {
     supportedTemplates.forEach(template => {
         withTypeScript.forEach(withTypeScript => {
             describe(`${template}`, () => {
-                it(`with TypeScript: ${withTypeScript} works`, async() => {
+                it(`short flags, with TypeScript: ${withTypeScript} works`, async() => {
                     const projectName = `${template}-${withTypeScript}`
                     const destinationPath = path.join(temporaryDirectory, projectName)
                     process.argv = [
@@ -25,8 +25,27 @@ describe('all templates are instantiated', () => {
                         temporaryDirectory,
                         '-t',
                         template,
-                        '-T',
-                        `${withTypeScript}`
+                        ...withTypeScript ? ['T'] : []
+                    ]
+
+                    await applicationStart()
+
+                    expect(fs.existsSync(destinationPath)).toBeTruthy()
+                })
+
+                it(`long flags, with TypeScript: ${withTypeScript} works`, async () => {
+                    const projectName = `${template}-${withTypeScript}`
+                    const destinationPath = path.join(temporaryDirectory, projectName)
+                    process.argv = [
+                        'npx',
+                        'create-orchy-mfe',
+                        '--name',
+                        projectName,
+                        '--directory',
+                        temporaryDirectory,
+                        '--template',
+                        template,
+                        ...withTypeScript ? ['--ts'] : []
                     ]
 
                     await applicationStart()
