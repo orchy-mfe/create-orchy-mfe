@@ -27,7 +27,7 @@ const groupRepositoriesByFramework = (repositories: GitTemplateRepositories[]) =
 
 export default class GitFacade {
     private gitClient = new GitClient()
-    private groupedRepositories?: GroupedRepositories
+    private groupedRepositories: GroupedRepositories = {}
 
     async retrieveGroupedRepositories(): Promise<GroupedRepositories> {
         const repositories = await this.gitClient.retrieveRepositories()
@@ -36,15 +36,15 @@ export default class GitFacade {
 
     async downloadTemplate (choises: Required<Arguments>) {
         const destinationPath = path.join(choises.directory, choises.name)
-        
-        const template = this.groupedRepositories![choises.template]
-        const repositoryToDownload = (template[`${choises.ts}`] || template['false'])!
-    
+
+        const template = this.groupedRepositories[choises.template]
+        const repositoryToDownload = template[`${choises.ts}`] || template['true'] || template['false']
+
         // @ts-ignore
         const [gitlyDownloadPath] = await (gitly.default || gitly)(repositoryToDownload.downloadUrl, destinationPath, {})
 
         await replaceTemplateName(choises, repositoryToDownload)
-    
+
         await fs.rm(gitlyDownloadPath)
     }
 }
