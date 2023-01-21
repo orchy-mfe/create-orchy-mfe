@@ -1,4 +1,4 @@
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 
 import argsParser from './argsParser'
 
@@ -106,6 +106,26 @@ describe('argsParser', () => {
             const flags = argsParser()
 
             expect(flags).toEqual({ts: true, template: 'tpl', directory: 'dir', name: 'foo'})
+        })
+    })
+
+    describe('version flag', () => {
+        it('parse correctly long flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '--version']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+
+        it('parse correctly short flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '-v']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
         })
     })
 })
