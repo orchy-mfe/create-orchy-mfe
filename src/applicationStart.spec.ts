@@ -1,12 +1,12 @@
-import {describe, expect, it} from 'vitest'
 import fs from 'fs'
-import path from 'path'
 import os from 'os'
+import path from 'path'
+import {describe, expect, it} from 'vitest'
 
 import {applicationStart} from './applicationStart'
 
 describe('all templates are instantiated', () => {
-    const supportedTemplates = ['react', 'preact', 'vue', 'svelte', 'vanilla', 'solid']
+    const supportedTemplates = ['react', 'preact', 'vue', 'svelte', 'vanilla', 'solid', 'angular']
     const withTypeScript = [true, false]
     const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'create-orchy-templates'))
 
@@ -34,6 +34,6 @@ describe('all templates are instantiated', () => {
                     expect(fs.existsSync(destinationPath)).toBeTruthy()
                 })
             })
-        })  
+        })
     })
 })
