@@ -36,7 +36,7 @@
     "@octokit/rest": "^19.0.7",
     "args": "^5.0.3",
     "chalk": "^5.2.0",
-    "gitly": "^2.2.3",
+    "gitly": "^2.3.0",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
