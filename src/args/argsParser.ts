@@ -1,4 +1,4 @@
-import args from 'args'
+import {Command} from 'commander'
 
 export interface Arguments {
     name?: string,
@@ -7,20 +7,17 @@ export interface Arguments {
     ts?: boolean
 }
 
-const manageBooleanValue = (value = '') => {
-    const lowerCaseValue = `${value}`.toLowerCase()
-    return ['true', 'false'].includes(lowerCaseValue) ? JSON.parse(lowerCaseValue) : undefined
-}
-
 const argsParser = (): Arguments => {
-    args
-        .option('name', 'The name of your new micro-frontend')
-        .option('directory', 'The directory where your micro-frontend will be located')
-        .option('template', 'The template that will be used generate your micro-frontend')
-        .option('ts', 'Use the TypeScript variant of the template', undefined, manageBooleanValue)
+    const program = new Command()
+    program
+        .option('-n --name <type>', 'The name of your new micro-frontend')
+        .option('-d --directory <type>', 'The directory where your micro-frontend will be located')
+        .option('-t --template <type>', 'The template that will be used generate your micro-frontend')
+        .option('-T --ts', 'Use the TypeScript variant of the template')
 
+    program.parse()
 
-    return args.parse(process.argv)
+    return program.opts()
 }
 
 export default argsParser
