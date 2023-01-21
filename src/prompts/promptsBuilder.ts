@@ -1,4 +1,4 @@
-import chalk, {ChalkInstance} from 'chalk'
+import chalk from 'chalk'
 import prompts from 'prompts'
 
 import {Arguments} from '../args/argsParser'
@@ -19,18 +19,11 @@ const colorFunctions = [
   chalk.white,
 ]
 
-const randomColor = () => colorFunctions[Math.floor(Math.random() * colorFunctions.length)]
-
-const choicesMapper = () => {
-  const usedColors: ChalkInstance[] = []
-  return (name: string) => {
-    let color
-    while((color = randomColor()) && usedColors.includes(color))
-    usedColors.push(color)
-    return {
-      title: color(name),
-      value: name
-    }
+const choicesMapper = (name: string, index: number) => {
+  const color = colorFunctions[index % colorFunctions.length]
+  return {
+    title: color(name),
+    value: name
   }
 }
 
@@ -59,7 +52,7 @@ const promptsBuilder = (groupedRepositories: GroupedRepositories, parsedArgs: Ar
       name: 'template',
       message: chalk.magenta('Choose a template:'),
       initial: Math.max(indexOfTemplate, 0),
-      choices: groupedRepositoriesNames.map(choicesMapper())
+      choices: groupedRepositoriesNames.map(choicesMapper)
     },
     {
       type: (_, {template = parsedArgs.template}) => parsedArgs.ts !== undefined || !groupedRepositories[template].true ? null : 'confirm',
