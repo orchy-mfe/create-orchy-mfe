@@ -34,3 +34,9 @@ Options:
     -t, --template   The template that will be used generate your micro-frontend
     -T, --ts         Use the TypeScript variant of the template
     -v, --version    Output the version number
+```
+
+## Troubleshooting
+
+#### Rate limit
+If you get an error about GitHub's rate limit, you should define the `GITHUB_AUTH_TOKEN` environment variable, which will be used to access the GitHub APIs' using the `octokit` client.
