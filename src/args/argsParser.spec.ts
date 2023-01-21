@@ -128,4 +128,24 @@ describe('argsParser', () => {
             expect(process.exit).toHaveBeenCalledWith(0)
         })
     })
+
+    describe('help flag', () => {
+        it('parse correctly long flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '--help']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+
+        it('parse correctly short flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '-h']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+    })
 })
