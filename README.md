@@ -20,7 +20,7 @@ npm create orchy-mfe
 
 The following video is an example of what you can get with `create-orchy-mfe` installed and running.
 
-https://github.com/orchy-mfe/create-orchy-mfe/raw/53b8ae1f51424c03e9d571338bd9d74b87e79756/assets/create-orchy-mfe.mp4
+https://user-images.githubusercontent.com/6383527/213863764-009423ed-cadd-45d8-981a-f2846ff337c8.mp4
 
 ## Non-interactive template download
 
