@@ -1,14 +1,16 @@
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 
 import argsParser from './argsParser'
 
 
 describe('argsParser', () => {
+    const defaultFlags = {ts: false}
+
     it('parse correctly without flags', () => {
         process.argv = ['npx', 'create-orchy-mfe']
         const flags = argsParser()
 
-        expect(flags).toEqual({})
+        expect(flags).toEqual(defaultFlags)
     })
 
     describe('name flag', () => {
@@ -16,14 +18,14 @@ describe('argsParser', () => {
             process.argv = ['npx', 'create-orchy-mfe', '--name', 'foo']
             const flags = argsParser()
 
-            expect(flags).toEqual({name: 'foo', n: 'foo'})
+            expect(flags).toEqual({...defaultFlags, name: 'foo'})
         })
 
         it('parse correctly short flag', () => {
             process.argv = ['npx', 'create-orchy-mfe', '-n', 'foos']
             const flags = argsParser()
 
-            expect(flags).toEqual({name: 'foos', n: 'foos'})
+            expect(flags).toEqual({...defaultFlags, name: 'foos'})
         })
     })
 
@@ -32,14 +34,14 @@ describe('argsParser', () => {
             process.argv = ['npx', 'create-orchy-mfe', '--directory', 'dir']
             const flags = argsParser()
 
-            expect(flags).toEqual({directory: 'dir', d: 'dir'})
+            expect(flags).toEqual({...defaultFlags, directory: 'dir'})
         })
 
         it('parse correctly short flag', () => {
             process.argv = ['npx', 'create-orchy-mfe', '-d', 'dirs']
             const flags = argsParser()
 
-            expect(flags).toEqual({d: 'dirs', directory: 'dirs'})
+            expect(flags).toEqual({...defaultFlags, directory: 'dirs'})
         })
     })
 
@@ -48,49 +50,49 @@ describe('argsParser', () => {
             process.argv = ['npx', 'create-orchy-mfe', '--template', 'tpl']
             const flags = argsParser()
 
-            expect(flags).toEqual({template: 'tpl', t: 'tpl'})
+            expect(flags).toEqual({...defaultFlags, template: 'tpl'})
         })
 
         it('parse correctly short flag', () => {
             process.argv = ['npx', 'create-orchy-mfe', '-t', 'tpls']
             const flags = argsParser()
 
-            expect(flags).toEqual({t: 'tpls', template: 'tpls'})
+            expect(flags).toEqual({...defaultFlags, template: 'tpls'})
         })
     })
 
     describe('ts flag', () => {
         describe('parse correctly long flag', () => {
-           it('for true value', () => {
-            process.argv = ['npx', 'create-orchy-mfe', '--ts']
-            const flags = argsParser()
+            it('for true value', () => {
+                process.argv = ['npx', 'create-orchy-mfe', '--ts']
+                const flags = argsParser()
 
-            expect(flags).toEqual({ts: true, T: true})
-           })
+                expect(flags).toEqual({ts: true})
+            })
 
-           it('for false value', () => {
-            process.argv = ['npx', 'create-orchy-mfe', '--ts=false']
-            const flags = argsParser()
+            it('for false value', () => {
+                process.argv = ['npx', 'create-orchy-mfe']
+                const flags = argsParser()
 
-            expect(flags).toEqual({ts: false, T: false})
-           })
+                expect(flags).toEqual(defaultFlags)
+            })
         })
 
         describe('parse correctly short flag', () => {
             it('for true value', () => {
-             process.argv = ['npx', 'create-orchy-mfe', '-T']
-             const flags = argsParser()
+                process.argv = ['npx', 'create-orchy-mfe', '-T']
+                const flags = argsParser()
 
-             expect(flags).toEqual({ts: true, T: true})
+                expect(flags).toEqual({ts: true})
             })
 
             it('for false value', () => {
-             process.argv = ['npx', 'create-orchy-mfe', '-T=false']
-             const flags = argsParser()
+                process.argv = ['npx', 'create-orchy-mfe']
+                const flags = argsParser()
 
-             expect(flags).toEqual({ts: false, T: false})
+                expect(flags).toEqual(defaultFlags)
             })
-         })
+        })
     })
 
     describe('all flags', () => {
@@ -98,14 +100,54 @@ describe('argsParser', () => {
             process.argv = ['npx', 'create-orchy-mfe', '--ts', '--template', 'tpl', '--directory', 'dir', '--name', 'foo']
             const flags = argsParser()
 
-            expect(flags).toEqual({ts: true, T: true, t: 'tpl', template: 'tpl', d: 'dir', directory: 'dir', name: 'foo', n: 'foo'})
+            expect(flags).toEqual({ts: true, template: 'tpl', directory: 'dir', name: 'foo'})
         })
 
         it('parse correctly short flags', () => {
             process.argv = ['npx', 'create-orchy-mfe', '-T', '-t', 'tpl', '-d', 'dir', '-n', 'foo']
             const flags = argsParser()
 
-            expect(flags).toEqual({ts: true, T: true, t: 'tpl', template: 'tpl', d: 'dir', directory: 'dir', name: 'foo', n: 'foo'})
+            expect(flags).toEqual({ts: true, template: 'tpl', directory: 'dir', name: 'foo'})
+        })
+    })
+
+    describe('version flag', () => {
+        it('parse correctly long flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '--version']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+
+        it('parse correctly short flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '-v']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+    })
+
+    describe('help flag', () => {
+        it('parse correctly long flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '--help']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
+        })
+
+        it('parse correctly short flag', () => {
+            process.argv = ['npx', 'create-orchy-mfe', '-h']
+            process.exit = vi.fn()
+
+            argsParser()
+
+            expect(process.exit).toHaveBeenCalledWith(0)
         })
     })
 })
