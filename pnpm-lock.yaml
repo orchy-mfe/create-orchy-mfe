@@ -10,17 +10,17 @@ specifiers:
   eslint: ^8.32.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-prettier: ^4.2.1
-  gitly: ^2.2.3
+  gitly: ^2.3.0
   prompts: ^2.4.2
   typescript: ^4.9.4
   unbuild: ^1.1.1
-  vitest: ^0.27.2
+  vitest: ^0.27.3
 
 dependencies:
   '@octokit/rest': 19.0.7
   chalk: 5.2.0
   commander: 10.0.0
-  gitly: 2.2.3
+  gitly: 2.3.0
   prompts: 2.4.2
 
 devDependencies:
@@ -32,7 +32,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_bwiznj6mum4nx2xtr6b6ecukoq
   typescript: 4.9.4
   unbuild: 1.1.1
-  vitest: 0.27.2
+  vitest: 0.27.3
 
 packages:
 
@@ -1012,8 +1012,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /axios/1.2.2:
-    resolution: {integrity: sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==}
+  /axios/1.2.3:
+    resolution: {integrity: sha512-pdDkMYJeuXLZ6Xj/Q5J3Phpe+jbGdsSzlQaFVkMQzRUL05+6+tetX8TV3p4HrU4kzuO9bt+io/yGQxuyxA/xcw==}
     dependencies:
       follow-redirects: 1.15.1
       form-data: 4.0.0
@@ -1780,10 +1780,10 @@ packages:
     resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}
     dev: true
 
-  /gitly/2.2.3:
-    resolution: {integrity: sha512-tDxFvT5ijj0+zC9nFVZwkn2+WtZK7zuhLZHTMzVsHQ27BWP/cqlXeyayJTyA1GVuQkPPl4f27ntvMwsqCqgeyw==}
+  /gitly/2.3.0:
+    resolution: {integrity: sha512-6JVjpgpxwm8ZcGktPyeEeOxV+uwtOavLGTH+K49dfBHSN6KnrzbQ0DY4m53laH9gTsRZH8xZ9DaYz2JxXH52tg==}
     dependencies:
-      axios: 1.2.2
+      axios: 1.2.3
       tar: 6.1.13
     transitivePeerDependencies:
       - debug
@@ -2496,6 +2496,10 @@ packages:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
     dev: true
 
+  /std-env/3.3.1:
+    resolution: {integrity: sha512-3H20QlwQsSm2OvAxWIYhs+j01MzzqwMwGiiO1NQaJYZgJZFPuAbf95/DiKRBSTYIJ2FeGUc+B/6mPGcWP9dO3Q==}
+    dev: true
+
   /strip-ansi/6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
@@ -2692,8 +2696,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /vite-node/0.27.2:
-    resolution: {integrity: sha512-IDwuVhslF10qCnWOGJui7/2KksAOBHi+UbVo6Pqt4f5lgn+kS2sVvYDsETRG5PSuslisGB5CFGvb9I6FQgymBQ==}
+  /vite-node/0.27.3:
+    resolution: {integrity: sha512-eyJYOO64o5HIp8poc4bJX+ZNBwMZeI3f6/JdiUmJgW02Mt7LnoCtDMRVmLaY9S05SIsjGe339ZK4uo2wQ+bF9g==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
@@ -2740,8 +2744,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.27.2:
-    resolution: {integrity: sha512-y7tdsL2uaQy+KF18AlmNHZe29ukyFytlxrpSTwwmgLE2XHR/aPucJP9FLjWoqjgqFlXzRAjHlFJLU+HDyI/OsA==}
+  /vitest/0.27.3:
+    resolution: {integrity: sha512-Ld3UVgRVhJUtqvQ3dW89GxiApFAgBsWJZBCWzK+gA3w2yG68csXlGZZ4WDJURf+8ecNfgrScga6xY+8YSOpiMg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -2773,12 +2777,13 @@ packages:
       local-pkg: 0.4.2
       picocolors: 1.0.0
       source-map: 0.6.1
+      std-env: 3.3.1
       strip-literal: 1.0.0
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 3.1.0
-      vite-node: 0.27.2
+      vite-node: 0.27.3
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
