@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@octokit/rest':
-    specifier: ^19.0.8
-    version: 19.0.8
+    specifier: ^19.0.9
+    version: 19.0.9
   chalk:
     specifier: ^5.2.0
     version: 5.2.0
@@ -695,8 +695,8 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest@19.0.8:
-    resolution: {integrity: sha512-/PKrzqn+zDzXKwBMwLI2IKrvk8yv8cedJOdcmxrjR3gmu6UIzURhP5oQj+4qkn7+uQi1gg7QqV4SqlaQ1HYW1Q==}
+  /@octokit/rest@19.0.9:
+    resolution: {integrity: sha512-JcXmyeFTtXPoINyrvTlpxWqgs/4yshHAfcukOvwTBRpJP35A5AfZDA87CbEt/uWJ+Olgph42d9jWI+TKzwizwQ==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.1.0
