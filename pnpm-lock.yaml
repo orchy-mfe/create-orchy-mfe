@@ -15,8 +15,8 @@ dependencies:
     specifier: ^11.1.0
     version: 11.1.0
   gitly:
-    specifier: ^2.4.7
-    version: 2.4.7
+    specifier: ^2.4.8
+    version: 2.4.8
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -1588,8 +1588,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /axios@1.6.2:
-    resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
+  /axios@1.6.3:
+    resolution: {integrity: sha512-fWyNdeawGam70jXSVlKl+SUNVcL6j6W79CuSIPfi6HnDUmSCH6gyUys/HrqHeA/wU0Az41rRgean494d0Jb+ww==}
     dependencies:
       follow-redirects: 1.15.1
       form-data: 4.0.0
@@ -2292,11 +2292,11 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /gitly@2.4.7:
-    resolution: {integrity: sha512-vW3G3zhrAmkvXNhSx+CNArAydXPbCwllS/ciTYe17FxkMD1Y6DzLxC7iD8tpajHjljF5rwY1zdLxVi4So97S4A==}
+  /gitly@2.4.8:
+    resolution: {integrity: sha512-7f3pnL96Tmhcnrh5dvLmwCphnMHuVE0GFH2ztZtw3jgez9JsYNFjWO2XLX1R6ivM3htdY26vgphIwRpWzX2kzA==}
     engines: {node: '>=15.x'}
     dependencies:
-      axios: 1.6.2
+      axios: 1.6.3
       tar: 6.2.0
     transitivePeerDependencies:
       - debug
