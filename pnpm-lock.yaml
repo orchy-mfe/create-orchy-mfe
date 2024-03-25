@@ -15,8 +15,8 @@ dependencies:
     specifier: ^12.0.0
     version: 12.0.0
   gitly:
-    specifier: ^2.5.0
-    version: 2.5.0
+    specifier: ^2.5.2
+    version: 2.5.2
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -2298,8 +2298,8 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /gitly@2.5.0:
-    resolution: {integrity: sha512-1mH8DH3xfImPBjRA9KHkVtVMTOqL1kSxH2F9gjpsstmRUjmlH3zMpAzIIP2S+wDqdRBIh+5s+SQsgfnso/rX8Q==}
+  /gitly@2.5.2:
+    resolution: {integrity: sha512-GsuSHHqRCvFU9KBuPs6gwC05hlmr80NJgXyKQFKdZ2wWNyzKDnmVdLISR8kkHFV5kUoEml0RaxoxlV16Pmvh1Q==}
     engines: {node: '>=15.x'}
     dependencies:
       axios: 1.6.7
