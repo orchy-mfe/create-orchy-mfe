@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/orchy-mfe/create-orchy-mfe#readme",
   "dependencies": {
-    "@octokit/rest": "^21.0.0",
+    "@octokit/rest": "^21.0.1",
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
     "gitly": "^3.0.0",
