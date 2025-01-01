@@ -15,8 +15,8 @@ dependencies:
     specifier: ^12.1.0
     version: 12.1.0
   gitly:
-    specifier: ^3.0.2
-    version: 3.0.2
+    specifier: ^3.0.3
+    version: 3.0.3
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -1400,8 +1400,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /axios@1.7.7:
-    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+  /axios@1.7.9:
+    resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -1570,6 +1570,16 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+    dev: true
+
+  /cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
+    engines: {node: '>= 8'}
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+    dev: false
 
   /css-declaration-sorter@7.2.0(postcss@8.4.49):
     resolution: {integrity: sha512-h70rUM+3PNFuaBDTLe8wF/cdWu+dOZmb7pJt8Z2sedYbAcQVQV/tEchueg3GWxwqS0cxtbxmaHEdkNACqcvsow==}
@@ -2085,7 +2095,7 @@ packages:
     resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
     engines: {node: '>=14'}
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
     dev: false
 
@@ -2121,12 +2131,12 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /gitly@3.0.2:
-    resolution: {integrity: sha512-sIqqL4ADxjpK6C53NWXB4CrNlTUlNm2xAwLLzBKgY05l3mcq/Hq6fKESz68VP+R9Wgwqc9FVaTVZz08Ypet/ow==}
+  /gitly@3.0.3:
+    resolution: {integrity: sha512-e3Bgv4dUkcCLBt8ozGyn2XeOGHIfEoOGODk7AoiJQVSmKn2F6WhFziwlbpjyrLbRLvKNrZRY5s+e7J2dd3lDKg==}
     engines: {node: '>=20.x'}
     dependencies:
-      axios: 1.7.7
-      cross-spawn: 7.0.3
+      axios: 1.7.9
+      cross-spawn: 7.0.6
       shelljs: 0.8.5
       tar: 7.4.3
     transitivePeerDependencies:
